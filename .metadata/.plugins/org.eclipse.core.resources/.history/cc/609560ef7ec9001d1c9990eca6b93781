@@ -1,0 +1,142 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.Exception.BadRequestException;
+import com.example.demo.model.Cart;
+import com.example.demo.model.Issue;
+
+import com.example.demo.service.LibraryService;
+@CrossOrigin("http://localhost:3000")
+@RestController
+@RequestMapping
+public class LibraryController {
+	
+	@Autowired
+	private LibraryService libraryservice;
+	
+	
+	public LibraryController(LibraryService libraryservice) {
+		super();
+		this.libraryservice = libraryservice;
+	}
+	
+	@GetMapping()
+	public List<Issue> getallIssues(){
+		return libraryservice.getAllIssues();
+	}
+
+	@PostMapping("/books/issue")
+	public Issue issueBook(@RequestBody Issue issue) throws BadRequestException {
+		Issue issue1 = libraryservice.issueBook(issue.getBookid(), issue.getMemberusername());
+		return issue1;
+		
+	}
+	
+//	@PostMapping("/books/return/{bookId}")
+//	public ResponseEntity<?> returnBook(@PathVariable Long bookId,Long memberid){
+//		libraryservice.returnBook(bookId,memberid);
+//		return ResponseEntity.ok().build();
+//		
+//	}
+//	
+//	@PostMapping("/books/renew/{bookId}")
+//	public ResponseEntity<?> renewBook(@PathVariable Long bookId,Long memberid){
+//		libraryservice.renewalBook(bookId,memberid);
+//		return ResponseEntity.ok().build();
+//		
+//	}
+	
+	@PostMapping("/books/return")
+	public Issue returnBook(@RequestBody Issue issue){
+		Issue issue2 = libraryservice.returnBook(issue.getBookid(),issue.getMemberusername());
+		return issue2;
+		
+	}
+	
+	@PostMapping("/books/renewal")
+	public Issue renewalBook(@RequestBody Issue issue){
+		Issue issue3 = libraryservice.renewalBook(issue.getBookid(),issue.getMemberusername());
+		return issue3;
+		
+	}
+	@GetMapping("/getcart/{memberid}/{status}")
+	public List<Cart> getcart(@PathVariable String memberusername, @PathVariable String status) {
+		List<Cart> cart = libraryservice.getCart(memberusername, status);
+		return cart;
+		
+	}
+	@GetMapping("/bookid/{bookid}")
+	public List<Cart> getmemberid(@PathVariable long bookid) {
+		 return libraryservice.findmemberid(bookid);
+		
+	}
+	
+	@GetMapping("/memberusername/{memberusername}")
+	public List<Cart> getmembercart(@PathVariable String memberusername){
+		return libraryservice.getusercart(memberusername);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+//	@GetMapping
+//	public List<Issue> getAllIsuues(){
+//		return issueservice.getAllIssues();
+//	}
+//	
+//	@GetMapping("/Issue/{id}")
+//	public Optional<Issue> getIssueById(@PathVariable Long id) {
+//		return issueservice.getIssueById(id);
+//	}
+//	@PostMapping
+//	public Issue createIssue(@RequestBody Issue issue) {
+//		return issueservice.createIssue(issue);	
+//	}
+//	
+//	@PutMapping("/{id}")
+//	public Issue updateIssue(@PathVariable Long id,@RequestBody Issue issue) {
+//		issue.setIssueId(id);
+//		return issueservice.updateIssue(issue);
+//		
+//	}
+//	
+//	@DeleteMapping("/{id}")
+//	public void deleteIssue(@PathVariable Long id) {
+//		issueservice.deleteIssue(id);
+//	}
+//	
+
+

@@ -1,0 +1,46 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Book;
+import com.example.demo.service.Bookservice;
+@CrossOrigin("http://localhost:3000")
+@RestController
+@RequestMapping("/api/Books")
+public class Bookcontroller {
+	private final Bookservice bookservice;
+
+	public Bookcontroller(Bookservice bookservice) {
+		this.bookservice = bookservice;
+	}
+	
+	@GetMapping
+	public List<Book> getAllBooks(){
+		return bookservice.getAllBooks();
+	}
+	@PostMapping
+	public Book createBook(@RequestBody Book book) {
+		return bookservice.createBook(book);
+	}
+	
+	@DeleteMapping("/accessno/{access_number}")
+	public void deleteBook(@PathVariable("access_number") Long access_number) {
+		bookservice.deleteBook(access_number);
+		
+	}
+	@GetMapping("/book/{categoryid}")
+	public List<Book> getbooksbycategory(@PathVariable Long categoryid){
+		return bookservice.getbookbyCategoryid(categoryid);
+		
+	}
+
+}

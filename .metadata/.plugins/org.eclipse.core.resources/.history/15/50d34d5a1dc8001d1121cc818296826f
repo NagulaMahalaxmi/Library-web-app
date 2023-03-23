@@ -1,0 +1,26 @@
+package com.example.demo.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.example.demo.model.Cart;
+import com.example.demo.model.Issue;
+
+public interface CartRepository extends JpaRepository<Cart,Long>{
+	
+	@Query(value="select cartid from cart where bookid=? and memberid=?",nativeQuery=true)
+	public long findBybookIdMemberId(long bookid,long memberid);
+	
+	@Query(value="select * from cart where bookid=? and memberid=? and status = 'Issued'",nativeQuery=true)
+	public Cart getBybookIdMemberId(long bookid,long memberid);
+	
+	@Query(value="select * from cart where memberid=? and status = ?",nativeQuery=true)
+	public List<Cart> getissuedbooksbyMemberId(Long memberid, String status);
+	
+	@Query(value="select * from cart where bookid=?",nativeQuery=true)
+	public List<Cart> memberid(long bookid);
+	
+
+}

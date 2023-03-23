@@ -1,0 +1,75 @@
+package com.example.demo.controller;
+
+import java.util.List;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.model.Book;
+import com.example.demo.service.Bookservice;
+//import com.example.demo.service.impl.Bookserviceimpl;
+@CrossOrigin("http://localhost:3000")
+@RestController
+@RequestMapping("/api")
+public class Bookcontroller {
+	
+	@Autowired
+	private Bookservice bookservice;
+	
+
+	public Bookcontroller(Bookservice bookservice) {
+		super();
+		this.bookservice = bookservice;
+	}
+
+	@GetMapping
+	public List<Book> findAll() {
+		// TODO Auto-generated method stub
+		return bookservice.findAll();
+	}
+	
+	@GetMapping("/accessno/{access_number}")
+	public List<Book> findByaccess_number(@PathVariable("access_number")Long access_number) {
+		// TODO Auto-generated method stub
+		return bookservice.getByAccessNumber(access_number);
+	}
+	
+	@GetMapping("/title/{title}")
+	public List<Book> findByTitle(@PathVariable("title")String title) {
+		// TODO Auto-generated method stub
+		return bookservice.getByTitle(title);
+	}
+
+	@GetMapping("/author/{author}")
+	public List<Book> findByAuthor(@PathVariable("author") String author) {
+		// TODO Auto-generated method stub
+		return bookservice.getByAuthor(author);
+	}
+
+	@GetMapping("/subject/{subject}")
+	public List<Book> findBySubject(@PathVariable("subject") String subject) {
+		// TODO Auto-generated method stub
+		return bookservice.getBySubject(subject);
+	}
+
+	@GetMapping("/keyword/{keyword}")
+	public List<Book> findByKeyword(@PathVariable("keyword") String keyword) {
+		// TODO Auto-generated method stub
+		return bookservice.getByKeyword(keyword);
+	}
+	@GetMapping("/books")
+	public List<Book> findBook(@RequestParam("subject") String subject, @RequestParam("access_number") Long access_number, @RequestParam("title") String title, @RequestParam("author") String author, @RequestParam("keyword") String keyword) {
+		// TODO Auto-generated method stub
+		List<Book> books = bookservice.findBook(subject, access_number, title, author, keyword);
+		return books;
+	}
+	
+	
+}

@@ -1,0 +1,90 @@
+package com.example.demo.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.model.Book;
+
+@Repository
+public interface Bookrepositoryy extends JpaRepository<Book,Long> {
+	
+	@Query(value="select * from book where access_number like %?% ;",nativeQuery=true)
+	public List<Book> getByAccessNumber(Long access_number);
+	@Query(value="select * from book where title like %?% ;",nativeQuery=true)
+	public List<Book> findByTitle(String title);
+	@Query(value="select * from book where author like %?% ;",nativeQuery=true)
+	public List<Book> findByAuthor(String author);
+	@Query(value="select * from book where keyword like %?% ;",nativeQuery=true)
+	public List<Book> findByKeyword(String keyword);
+	@Query(value="select * from book where subject like %?% ;",nativeQuery=true)
+	public List<Book> findBySubject(String subject);
+	
+	@Query(value="select * from book where subject like %?% and access_number like %?% and title like %?% and author like %?% keyword like %?% ;",nativeQuery=true)
+	public List<Book> findBook(Book book);
+	
+	
+	
+	
+	
+	
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//@Autowired
+//private JdbcTemplate jdbcTemplate;
+//
+//public List<Book> getAllBooks(){
+//	List<Book> book = jdbcTemplate.query("select * from book", new BookMapper());
+//	return book;
+//	
+//}
+//public Book getByAccessNumber(Long access_number) {
+//	 String sql = "select * from book where access_number LIKE ";
+//	 Book book = jdbcTemplate.queryForObject(sql, new Object[] {access_number}, new BookMapper());
+//	 return book; 
+//	
+//}
+//
+//public Book findByTitle(String title) {
+//	 String sql = "select * from book where title=?";
+//	 Book book = jdbcTemplate.queryForObject(sql, new Object[] {title}, new BookMapper());
+//	 return book; 
+//	
+//}
+//public Book findByAuthor(String author) {
+//	 String sql = "select * from book where author=?";
+//	 Book book = jdbcTemplate.queryForObject(sql, new Object[] {author}, new BookMapper());
+//	 return book; 
+//	
+//}
+//public Book findBySubject(String subject) {
+//	String sql = "select * from book where subject=?";
+//	 Book book = jdbcTemplate.queryForObject(sql, new Object[] {subject}, new BookMapper());
+//	 return book; 
+//	
+//}
+//public Book findByKeyword(String keyword) {
+//	String sql = "select * from book where keyword=?";
+//	 Book book = jdbcTemplate.queryForObject(sql, new Object[] {keyword}, new BookMapper());
+//	 return book; 
+//	
+//}
+//
