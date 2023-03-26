@@ -1,0 +1,111 @@
+.button-container form,
+.button-container form div {
+    display: inline;
+}
+
+.button-container button {
+    display: inline;
+    vertical-align: middle;
+}
+
+.button-container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    text-align: center;
+    width: 85%;
+    padding: 5px;
+    margin-left: 80px;
+    margin-top: 2%;
+    position: fixed;
+
+
+
+    background-image: url("C:\Users\mahalaxmi.nagula\Desktop\demo\react-navbar-dropdown\src\images\members.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    height: 82%;
+}
+
+
+.memberform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width:35%;
+    margin-top: 1%;
+    margin-left: 60px;
+    height: 480px;
+    padding-top: 13px;
+    padding-bottom: 10px;
+   
+
+
+   
+
+}
+
+/* .memberform {
+    height: 400px;
+    width: 200px;
+    
+    margin-left: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 2px;
+} */
+
+
+h1{
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px #494848e1;
+    align-items: center;
+    padding-top: 2px;
+
+   
+
+}
+
+button[type='submit'] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #097d1b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  
+}
+
+button[type='submit']:hover{
+    background-color: #07911e;
+}

@@ -1,0 +1,15 @@
+.home {
+    
+    background-image: url('https://www.forsa.ie/wp-content/uploads/2020/05/library.jpeg');
+    background-position: center;
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #f5e8e8;
+    font-size: 10000rem;
+    text-align: center;
+    height: 90%;
+    width: 100%;
+    
+     
+  } 

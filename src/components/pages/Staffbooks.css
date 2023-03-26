@@ -1,0 +1,129 @@
+/* .image{
+    align-items: center;
+    height: 40px;
+    width: 40px;
+
+    max-width: 100%;   
+    height:150px;
+    object-fit: contain;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-right: 20px;
+   
+
+} */
+
+.staffimage{
+    background-image: url("C:\Users\mahalaxmi.nagula\Desktop\demo\react-navbar-dropdown\src\images\staff.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    height: 330px;
+    width: 530px;
+    margin-top: 5%;
+    margin-left: 20px;
+
+}
+.image-button{
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 250px; */
+    background-color: #46668a;
+    border-radius: 3%;
+    width: 10%;
+    padding: 2px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+   margin-left: 200px;
+   margin-top: 30px;
+   margin-bottom: 15px;
+}
+
+
+.memberimage {
+    background-image: url("C:\Users\mahalaxmi.nagula\Desktop\demo\react-navbar-dropdown\src\images\member.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    
+    width: 400px;
+    float: right;
+    margin-top: 13%;
+    
+
+    /* margin-bottom: 1000px; */
+    position: relative;
+    height: 230px;
+    top: 0;
+    margin-top: 195px;
+    position: absolute;
+    margin-left: 75%;
+    transform: translateX(-50%);
+    padding-top: 100px;
+
+
+}
+/* .addclass{
+    margin-bottom: 30px;
+} */
+ 
+
+.image-button1{
+   
+   align-items: center;
+    justify-content: center;
+    background-color: #46668a;
+    border-radius: 3%;
+    width: 10%;
+    padding: 2px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+   margin-left: 850px;
+   
+   
+   
+
+
+
+  
+} 
+.staffbutton {
+    /* margin-bottom: -120px;
+    padding-bottom: 40px; */
+    margin-left: 230px;
+    margin-top: 30px;
+}
+
+.memberbutton{
+    /* margin-top: -130px;
+    padding-bottom: 150px; */
+    margin-top: -35px;
+    margin-left: 850px;
+    margin-right: 100px;
+    
+   
+}
+
+ /* align-items: center;
+    justify-content: center;
+    margin-right: 250px;
+    background-color: #46668a;
+    border-radius: 3%;
+    width: 10%;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+   margin-left: 850px;
+   margin-top: 0%;
+   margin-bottom: 450%; */

@@ -1,0 +1,111 @@
+.button-container form,
+.button-container form div {
+    display: inline;
+   
+    
+}
+
+.button-container button {
+    display: inline;
+    vertical-align: middle;
+}
+
+.button-containerb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+    text-align: center;
+    width: 85%;
+    padding: 10px;
+    margin-left: 100px;
+    margin-top: 0.2%;
+
+
+    background-image: url("C:\Users\mahalaxmi.nagula\Desktop\demo\react-navbar-dropdown\src\images\books.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    
+    /* width: 600px;
+    float: right;
+    margin-top: 13%; */
+    
+} 
+.bookformb {
+    
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+   
+    border-radius: 10px;
+    width:50%;
+    padding-left: 25px;
+    padding-right: 40px;
+
+    padding-top: 2%;
+    
+    
+   
+
+}
+
+/* .memberform {
+    height: 400px;
+    width: 200px;
+    
+    margin-left: 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 2px;
+} */
+
+
+h1{
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px #494848e1;
+    padding-top: 1px;
+   
+
+}
+
+button[type='submit'] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #097d1b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+button[type='submit']:hover{
+    background-color: #07911e;
+}
